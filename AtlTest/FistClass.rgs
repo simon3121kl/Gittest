@@ -1,0 +1,26 @@
+HKCR
+{
+	FistCOM.math.1 = s 'FistClass Class'
+	{
+		CLSID = s '{0603DA81-FC63-45CE-A0D9-B8FFA783A96A}'
+	}
+	FistCOM.math = s 'FistClass Class'
+	{		
+		CurVer = s 'FistCOM.math.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0603DA81-FC63-45CE-A0D9-B8FFA783A96A} = s 'FistClass Class'
+		{
+			ProgID = s 'FistCOM.math.1'
+			VersionIndependentProgID = s 'FistCOM.math'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{88E37A9B-E083-478C-B04E-EB6F4D8054BE}'
+			Version = s '1.0'
+		}
+	}
+}
